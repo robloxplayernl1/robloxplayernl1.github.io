@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0c0b0a" />
+        <meta name="description" content="Handige openbare links op één plek." />
+        <title>Mijn links</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="stylesheet" href="mijn-links.css" />
+        <link rel="stylesheet" href="portfolio.css" />
+        <link rel="stylesheet" href="theme.css" />
+        <script src="theme.js" defer></script>
+        <script src="mijn-links.js" defer></script>
+        <script src="page-effects.js" defer></script>
+    </head>
+    <body class="standalone-page">
+        <button class="theme-toggle theme-toggle-fixed" type="button" aria-label="Schakel naar licht thema" aria-pressed="false">
+            <span aria-hidden="true">☀</span>
+        </button>
+        <div class="container">
+            <header class="page-header">
+                <p class="eyebrow">Mijn persoonlijke pagina</p>
+                <h1>Mijn links</h1>
+                <p class="subtitle">Handige websites op één plek.</p>
+            </header>
+
+            <nav class="category-nav" id="category-nav" aria-label="Linkcategorieën"></nav>
+            <main id="pages"></main>
+
+            <footer>
+                <p>Alle links op deze pagina zijn alleen te bekijken en te openen.</p>
+            </footer>
+        </div>
+    </body>
+</html>

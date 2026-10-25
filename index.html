@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#08050d" />
+        <title>Home</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="portfolio.css" />
+        <link rel="stylesheet" href="theme.css" />
+        <script src="theme.js" defer></script>
+        <script src="portfolio.js" defer></script>
+        <script src="page-effects.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="logo" href="index.html" aria-label="Home">Home</a>
+            <nav aria-label="Hoofdnavigatie">
+                <a href="#home">Start</a>
+                <a href="over-mij.html">Over mij</a>
+                <a href="projecten.html">Projecten</a>
+                <a href="vaardigheden.html">Vaardigheden</a>
+                <a href="updates.html">Updates</a>
+                <a href="blokcraft.html">Blokcraft</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Schakel naar licht thema" aria-pressed="false">
+                <span aria-hidden="true">☀</span>
+            </button>
+        </header>
+
+        <main>
+            <section class="hero" id="home">
+                <p class="eyebrow">Welkom op mijn website</p>
+                <h1>Een plek om nieuwe dingen te ontdekken.</h1>
+                <p class="intro" id="over">
+                    Ik ben Sil. Ik hou van programmeren, websites maken en Minecraft.
+                </p>
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>Website voortgang</span>
+                        <output id="progress-value" for="website-progress">30%</output>
+                    </div>
+                    <progress id="website-progress" max="100" value="30">30%</progress>
+                </div>
+            </section>
+            <section class="home-tools" aria-label="Live tijd en interactieve terminal">
+                <article class="tool-card clock-card">
+                    <p class="eyebrow">Europe/Amsterdam</p>
+                    <h2>Live klok</h2>
+                    <time id="live-clock" class="live-clock" aria-label="Actuele tijd in Nederland">Laden…</time>
+                    <p id="live-date" class="live-date"></p>
+                </article>
+                <article class="tool-card terminal-card">
+                    <p class="eyebrow">Ontdek de website</p>
+                    <h2>Interactieve terminal</h2>
+                    <div class="terminal-window">
+                        <div class="terminal-topbar">
+                            <span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                            <span>sil@website: ~</span>
+                            <span class="terminal-online"><i></i> online</span>
+                        </div>
+                        <div class="terminal-output" id="terminal-output" role="log" aria-live="polite">
+                            <p>Typ <code>help</code> om beschikbare opdrachten te zien.</p>
+                        </div>
+                        <div class="terminal-shortcuts" aria-label="Snelle opdrachten">
+                            <button type="button" data-terminal-command="help">help</button>
+                            <button type="button" data-terminal-command="projects">projects</button>
+                            <button type="button" data-terminal-command="skills">skills</button>
+                            <button type="button" data-terminal-command="date">date</button>
+                        </div>
+                        <form class="terminal-form" id="terminal-form">
+                            <label for="terminal-input" aria-label="Terminalopdracht">&gt;</label>
+                            <input id="terminal-input" name="command" type="text" maxlength="180" autocomplete="off" spellcheck="false" aria-label="Typ een opdracht" />
+                            <button type="submit">Uitvoeren</button>
+                        </form>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="legal-footer">
+            <a href="privacy-policy.html">Privacybeleid</a>
+            <a href="terms-of-service.html">Gebruiksvoorwaarden</a>
+        </footer>
+    </body>
+</html>

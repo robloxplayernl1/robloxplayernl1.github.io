@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#08050d" />
+        <meta name="description" content="Speel mee op de Minecraft-server Blokcraft." />
+        <title>Blokcraft - Minecraft-server</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <link rel="stylesheet" href="blokcraft.css" />
+        <link rel="stylesheet" href="portfolio.css" />
+        <link rel="stylesheet" href="theme.css" />
+        <script src="theme.js" defer></script>
+        <script src="page-effects.js" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="logo" href="blokcraft.html" aria-label="Blokcraft startpagina">
+                <span class="logo-mark" aria-hidden="true">B</span>
+                Blokcraft
+            </a>
+            <nav aria-label="Hoofdnavigatie">
+                <a href="index.html">Start</a>
+                <a href="#home" aria-current="page">Blokcraft</a>
+                <a href="#regels">Regels</a>
+                <a href="#openingstijden">Openingstijden</a>
+                <a href="#team">Staff</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Schakel naar licht thema" aria-pressed="false">
+                <span aria-hidden="true">☀</span>
+            </button>
+        </header>
+
+        <main>
+            <section class="hero" id="home" aria-labelledby="page-title">
+                <div class="hero-content">
+                    <p class="eyebrow"><span class="status-dot"></span> Minecraft-server</p>
+                    <h1 id="page-title">Jouw avontuur<br />begint bij <span>Blokcraft</span></h1>
+                    <p class="intro">
+                        Stap in, ontdek de wereld en maak er jouw avontuur van.
+                    </p>
+                    <a class="button" href="#meedoen">Ontdek hoe je meedoet <span aria-hidden="true">↓</span></a>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <span class="cube cube-back"></span>
+                    <span class="cube cube-front"></span>
+                    <span class="spark spark-one"></span>
+                    <span class="spark spark-two"></span>
+                </div>
+            </section>
+
+            <section class="join-section" id="meedoen" aria-labelledby="join-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Klaar om te spelen?</p>
+                    <h2 id="join-title">Kom erbij</h2>
+                    <p>Java en Bedrock kunnen allebei meedoen. Kies jouw editie en gebruik het serveradres.</p>
+                </div>
+
+                <div class="server-address">
+                    <div class="address-info">
+                        <span class="address-label">Serveradres</span>
+                        <code id="server-ip">blokcraftsmp.mcsh.io</code>
+                    </div>
+                    <button class="copy-button" data-copy="server-ip" type="button">
+                        Kopieer IP
+                    </button>
+                    <p class="copy-status" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="steps" aria-label="Zo voeg je de server toe">
+                    <article class="step-card">
+                        <span class="step-number">JAVA EDITION</span>
+                        <h3>Open Minecraft</h3>
+                        <p>Open Multiplayer en voeg een server toe. Plak het IP-adres en maak verbinding.</p>
+                    </article>
+                    <article class="step-card">
+                        <span class="step-number">BEDROCK EDITION</span>
+                        <h3>Server toevoegen</h3>
+                        <p>Ga naar Servers en voeg Blokcraft toe met het adres en de poort hieronder.</p>
+                        <div class="port-row">
+                            <span>Poort</span>
+                            <code id="bedrock-port">19132</code>
+                            <button class="text-copy-button" data-copy="bedrock-port" type="button">Kopieer</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="info-section" id="openingstijden" aria-labelledby="hours-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Wanneer kun je spelen?</p>
+                    <h2 id="hours-title">Openingstijden</h2>
+                    <p>Blokcraft is elke dag de hele dag geopend.</p>
+                </div>
+                <div class="hours-grid">
+                    <span>Maandag</span><strong>Hele dag</strong>
+                    <span>Dinsdag</span><strong>Hele dag</strong>
+                    <span>Woensdag</span><strong>Hele dag</strong>
+                    <span>Donderdag</span><strong>Hele dag</strong>
+                    <span>Vrijdag</span><strong>Hele dag</strong>
+                    <span>Zaterdag</span><strong>Hele dag</strong>
+                    <span>Zondag</span><strong>Hele dag</strong>
+                </div>
+            </section>
+
+            <section class="info-section" id="regels" aria-labelledby="rules-title">
+                <div class="section-heading">
+                    <p class="eyebrow">Fijn spelen voor iedereen</p>
+                    <h2 id="rules-title">Serverregels</h2>
+                    <p>Wees respectvol en help mee om Blokcraft leuk te houden.</p>
+                </div>
+                <ol class="rules-list">
+                    <li><span>01</span> Verniel of grief geen bouwwerken van andere spelers.</li>
+                    <li><span>02</span> Behandel andere spelers met respect.</li>
+                    <li><span>03</span> Val andere spelers niet zonder reden aan.</li>
+                    <li><span>04</span> Spam niet en maak geen reclame.</li>
+                    <li><span>05</span> Toon respect voor het staffteam.</li>
+                    <li><span>06</span> Hacks, cheats en X-ray zijn niet toegestaan.</li>
+                    <li><span>07</span> Houd je taalgebruik netjes.</li>
+                </ol>
+            </section>
+
+            <section class="info-section" id="team" aria-labelledby="team-title">
+                <div class="section-heading">
+                    <p class="eyebrow">De mensen achter de server</p>
+                    <h2 id="team-title">Ons staffteam</h2>
+                    <p>Het team helpt Blokcraft draaiende te houden.</p>
+                </div>
+                <div class="staff-grid">
+                    <article class="staff-card">
+                        <span class="staff-avatar" aria-hidden="true">S</span>
+                        <h3>f16sil13 / sil</h3>
+                        <p>Owner &amp; head developer</p>
+                    </article>
+                    <article class="staff-card">
+                        <span class="staff-avatar" aria-hidden="true">F</span>
+                        <h3>firehunter223</h3>
+                        <p>Owner</p>
+                    </article>
+                    <article class="staff-card">
+                        <span class="staff-avatar" aria-hidden="true">T</span>
+                        <h3>tammo_nl</h3>
+                        <p>Owner</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="info-section contact-section" id="contact" aria-labelledby="contact-title">
+                <div class="section-heading">
+                    <p class="eyebrow">We helpen je graag</p>
+                    <h2 id="contact-title">Contact &amp; community</h2>
+                    <p>Vragen of een melding? Bereik het team via Discord.</p>
+                    <a class="button" href="https://discord.gg/Y4BchzeFJH" target="_blank" rel="noopener noreferrer">
+                        Join de Discord <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <a class="footer-logo" href="#home">Blokcraft</a>
+            <p>Niet aangesloten bij Mojang of Microsoft.</p>
+            <div class="footer-legal-links">
+                <a href="privacy-policy.html">Privacybeleid</a>
+                <a href="terms-of-service.html">Gebruiksvoorwaarden</a>
+            </div>
+        </footer>
+
+        <script>
+            document.querySelectorAll(".copy-button, .text-copy-button").forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const value = document.querySelector(`#${button.dataset.copy}`).textContent;
+                    const status = button.closest(".server-address").querySelector(".copy-status");
+
+                    try {
+                        await navigator.clipboard.writeText(value);
+                        status.textContent = "Gekopieerd!";
+                    } catch {
+                        status.textContent = "Kopiëren is niet gelukt. Selecteer en kopieer de tekst.";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

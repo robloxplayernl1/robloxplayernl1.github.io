@@ -1,0 +1,167 @@
+:root {
+    color-scheme: dark;
+    font-family: Arial, sans-serif;
+    color: #f5efff;
+    background: #08050d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(115, 48, 166, 0.16), transparent 58%),
+        #08050d;
+}
+
+.site-header {
+    width: min(100% - 48px, 1080px);
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.site-header nav {
+    margin-left: auto;
+}
+
+.logo,
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo {
+    color: #c28aff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #c9c0d2;
+    transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: #c28aff;
+}
+
+main {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 64px 24px;
+}
+
+.about-card {
+    width: min(100%, 760px);
+    padding: clamp(32px, 7vw, 64px);
+    border: 1px solid rgba(194, 138, 255, 0.35);
+    border-radius: 18px;
+    background: rgba(17, 9, 28, 0.75);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+}
+
+.eyebrow {
+    margin: 0;
+    color: #c28aff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 16px 0;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.about-content {
+    margin-top: 28px;
+    color: #b8afc2;
+    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+.about-content p {
+    margin: 0 0 18px;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content h2 {
+    margin: 30px 0 12px;
+    color: #c28aff;
+    font-size: 1.4rem;
+    line-height: 1.3;
+}
+
+.about-content h2 + p {
+    margin-top: 0;
+}
+
+.about-content p:last-child {
+    color: #f5efff;
+    font-weight: 700;
+}
+
+a:focus-visible {
+    outline: 3px solid #d7b4ff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        width: min(100% - 32px, 1080px);
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .site-header nav {
+        margin-left: 0;
+    }
+}
+
+body[data-theme="light"] {
+    color-scheme: light;
+    color: #241a2e;
+    background: radial-gradient(ellipse at 50% 45%, rgba(115, 48, 166, 0.1), transparent 58%), #f4effa;
+}
+
+body[data-theme="light"] nav a {
+    color: #63576e;
+}
+
+body[data-theme="light"] .about-card {
+    background: rgba(255, 255, 255, 0.86);
+}
+
+body[data-theme="light"] .about-content {
+    color: #63576e;
+}
+
+body[data-theme="light"] .about-content p:last-child {
+    color: #241a2e;
+}
