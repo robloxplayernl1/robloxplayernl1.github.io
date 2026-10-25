@@ -2,6 +2,12 @@ const THEME_KEY = "personalWebsiteTheme";
 const themeToggle = document.querySelector(".theme-toggle");
 
 if (location.protocol === "file:") {
+    document.body.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.includes("permalink:")) node.remove();
+    });
+}
+
+if (location.protocol === "file:") {
     document.querySelectorAll('a[href^="/"]').forEach(link => {
         const route = link.getAttribute("href");
         const suffixIndex = route.search(/[?#]/);
