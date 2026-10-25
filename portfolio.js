@@ -9,25 +9,31 @@ const skills = [
 const projects = [
     {
         title: "Persoonlijke website",
-        image: "images/project-website.svg",
+        image: "/images/project-website.svg",
         imageAlt: "Illustratie van een browservenster voor de persoonlijke website",
         description: "Mijn persoonlijke website met informatie over mij, mijn projecten en wat ik maak.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        url: "index.html",
+        url: "/",
         type: "website"
     },
     {
         title: "Blokcraft",
-        image: "images/project-blokcraft.svg",
+        image: "/images/project-blokcraft.svg",
         imageAlt: "Illustratie van een blok voor het Minecraft-project Blokcraft",
         description: "De website en informatiepagina voor Blokcraft, een Minecraft-server.",
         technologies: ["HTML", "CSS", "JavaScript", "Minecraft"],
-        url: "blokcraft.html",
+        url: "/blokcraft/",
         type: "website"
     }
 ];
 
 const updates = [
+    {
+        version: "1.1.0",
+        date: "2026-10-25",
+        title: "Nettere website-adressen",
+        description: "Je kunt pagina's nu openen met korte URL's zonder .html, zoals /projecten/ en /over-mij/."
+    },
     {
         version: "1.0.0",
         date: "2026-10-25",
@@ -243,7 +249,7 @@ if (terminalForm && terminalInput && terminalOutput) {
                 printTerminalLine(`Het ${document.body.dataset.theme === "light" ? "lichte" : "donkere"} thema is actief. Gebruik het zonnetje om te wisselen.`);
                 break;
             case "ls":
-                printTerminalLine("index.html · projecten.html · vaardigheden.html · updates.html · blokcraft.html");
+                printTerminalLine("/ · /projecten/ · /vaardigheden/ · /updates/ · /blokcraft/");
                 break;
             case "echo":
                 printTerminalLine(argument || "Gebruik: echo <tekst>");
