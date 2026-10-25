@@ -28,6 +28,12 @@ const projects = [
 ];
 
 const updates = [
+     {
+        version: "1.2.0",
+        date: "2026-10-25",
+        title: "veranderderde over mij",
+        description: "anderen over mij tekst"
+    },
     {
         version: "1.1.0",
         date: "2026-10-25",
