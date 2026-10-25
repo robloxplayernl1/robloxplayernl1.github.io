@@ -1,0 +1,46 @@
+defaults:
+  - scope:
+      path: "over-mij.html"
+      type: "pages"
+    values:
+      permalink: /over-mij/
+  - scope:
+      path: "projecten.html"
+      type: "pages"
+    values:
+      permalink: /projecten/
+  - scope:
+      path: "vaardigheden.html"
+      type: "pages"
+    values:
+      permalink: /vaardigheden/
+  - scope:
+      path: "updates.html"
+      type: "pages"
+    values:
+      permalink: /updates/
+  - scope:
+      path: "blokcraft.html"
+      type: "pages"
+    values:
+      permalink: /blokcraft/
+  - scope:
+      path: "privacy-policy.html"
+      type: "pages"
+    values:
+      permalink: /privacy-policy/
+  - scope:
+      path: "terms-of-service.html"
+      type: "pages"
+    values:
+      permalink: /terms-of-service/
+  - scope:
+      path: "mijn-links.html"
+      type: "pages"
+    values:
+      permalink: /mijn-links/
+  - scope:
+      path: "tijdelijk-gesloten.html"
+      type: "pages"
+    values:
+      permalink: /tijdelijk-gesloten/

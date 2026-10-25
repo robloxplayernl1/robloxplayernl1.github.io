@@ -1,6 +1,17 @@
 const THEME_KEY = "personalWebsiteTheme";
 const themeToggle = document.querySelector(".theme-toggle");
 
+if (location.protocol === "file:") {
+    document.querySelectorAll('a[href^="/"]').forEach(link => {
+        const route = link.getAttribute("href");
+        const suffixIndex = route.search(/[?#]/);
+        const pathname = suffixIndex === -1 ? route : route.slice(0, suffixIndex);
+        const suffix = suffixIndex === -1 ? "" : route.slice(suffixIndex);
+        const localPath = pathname === "/" ? "index.html" : `${pathname.replace(/^\/+|\/+$/g, "")}.html`;
+        link.setAttribute("href", `${localPath}${suffix}`);
+    });
+}
+
 if (themeToggle) {
     function setTheme(theme) {
         const isLight = theme === "light";

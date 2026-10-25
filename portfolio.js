@@ -9,7 +9,7 @@ const skills = [
 const projects = [
     {
         title: "Persoonlijke website",
-        image: "/images/project-website.svg",
+        image: "images/project-website.svg",
         imageAlt: "Illustratie van een browservenster voor de persoonlijke website",
         description: "Mijn persoonlijke website met informatie over mij, mijn projecten en wat ik maak.",
         technologies: ["HTML", "CSS", "JavaScript"],
@@ -18,7 +18,7 @@ const projects = [
     },
     {
         title: "Blokcraft",
-        image: "/images/project-blokcraft.svg",
+        image: "images/project-blokcraft.svg",
         imageAlt: "Illustratie van een blok voor het Minecraft-project Blokcraft",
         description: "De website en informatiepagina voor Blokcraft, een Minecraft-server.",
         technologies: ["HTML", "CSS", "JavaScript", "Minecraft"],
@@ -45,6 +45,11 @@ const updates = [
 function renderItems(container, items, createItem) {
     if (!container) return;
     container.replaceChildren(...items.map(createItem));
+}
+
+function getPageUrl(url) {
+    if (location.protocol !== "file:") return url;
+    return url === "/" ? "index.html" : `${url.replace(/^\/+|\/+$/g, "")}.html`;
 }
 
 function createProjectCard(project) {
@@ -78,7 +83,7 @@ function createProjectCard(project) {
 
     const link = document.createElement("a");
     link.className = "project-link";
-    link.href = project.url;
+    link.href = getPageUrl(project.url);
     link.textContent = `Bekijk ${project.title}`;
     link.setAttribute("aria-label", `Bekijk project: ${project.title}`);
 
