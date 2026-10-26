@@ -484,6 +484,96 @@ h1 span {
     margin-top: 24px;
 }
 
+.news-hub-grid {
+    max-width: 760px;
+    margin: 34px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.news-hub-card,
+.news-empty {
+    border: 1px solid rgba(229, 173, 103, 0.24);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.news-hub-card {
+    padding: 24px;
+}
+
+.news-hub-card h3 {
+    margin: 12px 0 8px;
+    font-size: 1.3rem;
+}
+
+.news-hub-card > p:not(.eyebrow) {
+    min-height: 3.2em;
+    margin: 0 0 20px;
+    color: #aaa197;
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+.news-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f2c47f;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.news-link:hover {
+    color: #fff4e3;
+}
+
+.blockcraft-subpage .subpage-hero {
+    min-height: 390px;
+}
+
+.blockcraft-subpage .subpage-hero .hero-content {
+    padding: 72px 0;
+}
+
+.blockcraft-subpage .subpage-hero h1 {
+    max-width: 760px;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+.news-empty {
+    max-width: 700px;
+    margin: 34px auto 0;
+    padding: clamp(24px, 5vw, 40px);
+    text-align: center;
+}
+
+.news-empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(229, 173, 103, 0.4);
+    border-radius: 14px;
+    background: rgba(183, 120, 62, 0.16);
+    color: #f2c47f;
+    font-size: 1.35rem;
+}
+
+.news-empty h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.news-empty p {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #aaa197;
+    line-height: 1.7;
+}
+
 .site-footer {
     width: min(100% - 48px, 1120px);
     margin: 0 auto;
@@ -541,6 +631,10 @@ button:focus-visible {
     }
 
     .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .news-hub-grid {
         grid-template-columns: 1fr;
     }
 
@@ -616,9 +710,24 @@ body[data-theme="light"] .site-footer {
 
 body[data-theme="light"] .step-card,
 body[data-theme="light"] .staff-card,
-body[data-theme="light"] .rules-list li {
+body[data-theme="light"] .rules-list li,
+body[data-theme="light"] .news-hub-card,
+body[data-theme="light"] .news-empty {
     border-color: rgba(40, 35, 29, 0.12);
     background: rgba(255, 255, 255, 0.7);
+}
+
+body[data-theme="light"] .news-hub-card > p:not(.eyebrow),
+body[data-theme="light"] .news-empty p {
+    color: #62594e;
+}
+
+body[data-theme="light"] .news-link {
+    color: #8a541f;
+}
+
+body[data-theme="light"] .news-link:hover {
+    color: #563411;
 }
 
 body[data-theme="light"] .server-address {
