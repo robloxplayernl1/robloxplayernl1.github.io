@@ -3,7 +3,9 @@ const themeToggle = document.querySelector(".theme-toggle");
 
 if (location.protocol === "file:") {
     document.body.childNodes.forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE && node.textContent.includes("permalink:")) node.remove();
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.includes("permalink:")) {
+            node.remove();
+        }
     });
 }
 
@@ -13,7 +15,8 @@ if (location.protocol === "file:") {
         const suffixIndex = route.search(/[?#]/);
         const pathname = suffixIndex === -1 ? route : route.slice(0, suffixIndex);
         const suffix = suffixIndex === -1 ? "" : route.slice(suffixIndex);
-        const localPath = pathname === "/" ? "index.html" : `${pathname.replace(/^\/+|\/+$/g, "")}.html`;
+        const pageName = pathname.split("/").filter(Boolean).pop();
+        const localPath = `${pageName || "index"}.html`;
         link.setAttribute("href", `${localPath}${suffix}`);
     });
 }
