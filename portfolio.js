@@ -48,6 +48,32 @@ const updates = [
     }
 ];
 
+// Add new entries at the top. Use YYYY-MM-DD for dates so the list stays newest-first.
+const blockcraftChangelog = [
+    {
+        date: "",
+        title: "Voorbeeldupdate",
+        description: "Vervang dit door een korte samenvatting van de serverupdate.",
+        changes: [
+            "Beschrijf hier een nieuwe functie.",
+            "Noem hier een aanpassing of opgeloste bug."
+        ],
+        isExample: true
+    }
+];
+
+// Events use the same date format; leave date and time empty until they are confirmed.
+const blockcraftEvents = [
+    {
+        date: "",
+        time: "",
+        title: "Voorbeeldevent",
+        description: "Vervang dit door informatie over het event en wat spelers gaan doen.",
+        participation: "Zet hier waar spelers zich kunnen aanmelden of verzamelen.",
+        isExample: true
+    }
+];
+
 function renderItems(container, items, createItem) {
     if (!container) return;
     container.replaceChildren(...items.map(createItem));
@@ -144,6 +170,60 @@ function createUpdateCard(update) {
     return card;
 }
 
+function createBlockcraftNewsEntry(entry, type) {
+    const card = document.createElement("article");
+    card.className = "news-entry";
+
+    const heading = document.createElement("div");
+    heading.className = "news-entry-heading";
+
+    const titleGroup = document.createElement("div");
+    const label = document.createElement("p");
+    label.className = "eyebrow";
+    label.textContent = entry.isExample
+        ? type === "event" ? "Testvoorbeeld · niet echt gepland" : "Testvoorbeeld"
+        : type === "event" ? "Blokcraft event" : "Serverupdate";
+
+    const title = document.createElement("h3");
+    title.textContent = entry.title;
+    titleGroup.append(label, title);
+
+    const date = document.createElement("time");
+    date.className = "news-entry-date";
+    if (entry.date) date.dateTime = entry.date;
+    if (type === "event") {
+        date.textContent = [entry.date, entry.time].filter(Boolean).join(" · ") || "Datum en tijd invullen";
+    } else {
+        date.textContent = entry.date ? formatDutchDate(new Date(`${entry.date}T12:00:00Z`)) : "Datum invullen";
+    }
+    heading.append(titleGroup, date);
+    card.append(heading);
+
+    const description = document.createElement("p");
+    description.textContent = entry.description;
+    card.append(description);
+
+    if (type === "event") {
+        if (entry.participation) {
+            const participation = document.createElement("p");
+            const participationLabel = document.createElement("strong");
+            participationLabel.textContent = "Meedoen: ";
+            participation.append(participationLabel, document.createTextNode(entry.participation));
+            card.append(participation);
+        }
+    } else if (entry.changes && entry.changes.length) {
+        const changes = document.createElement("ul");
+        entry.changes.forEach(change => {
+            const item = document.createElement("li");
+            item.textContent = change;
+            changes.append(item);
+        });
+        card.append(changes);
+    }
+
+    return card;
+}
+
 function createStatCard(label, value) {
     const card = document.createElement("article");
     card.className = "stat-card";
@@ -161,6 +241,16 @@ renderItems(
     document.querySelector("#updates-list"),
     [...updates].sort((first, second) => second.date.localeCompare(first.date)),
     createUpdateCard
+);
+renderItems(
+    document.querySelector("#changelog-list"),
+    [...blockcraftChangelog].sort((first, second) => second.date.localeCompare(first.date)),
+    entry => createBlockcraftNewsEntry(entry, "changelog")
+);
+renderItems(
+    document.querySelector("#events-list"),
+    [...blockcraftEvents].sort((first, second) => second.date.localeCompare(first.date)),
+    entry => createBlockcraftNewsEntry(entry, "event")
 );
 renderItems(document.querySelector("#stats-grid"), [
     { label: "Projecten", value: projects.length },
