@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="theme.css" />
         <script src="theme.js" defer></script>
         <script src="portfolio.js" defer></script>
+        <script src="home-interactions.js" defer></script>
         <script src="page-effects.js" defer></script>
     </head>
     <body>
@@ -22,6 +23,8 @@
                 <a href="/over-mij/">Over mij</a>
                 <a href="/projecten/">Projecten</a>
                 <a href="/vaardigheden/">Vaardigheden</a>
+                <a href="/hobbys/">Hobby's</a>
+                <a href="/favorieten/">Favorieten</a>
                 <a href="/updates/">Updates</a>
                 <a href="/blokcraft/">Blokcraft</a>
             </nav>
@@ -76,6 +79,29 @@
                             <button type="submit">Uitvoeren</button>
                         </form>
                     </div>
+                </article>
+            </section>
+            <section class="extras home-extras" aria-label="Meer over mij">
+                <article class="extra-card current-project-card">
+                    <p class="eyebrow">Waar ik nu mee bezig ben</p>
+                    <h2>De Blokcraft Minecraft-server</h2>
+                    <p class="card-description">Ik ben op dit moment bezig met de Blokcraft Minecraft-server. Ik werk aan de server en alles wat erbij komt kijken.</p>
+                    <a class="button" href="/blokcraft/">Bekijk Blokcraft <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="extra-card fact-card">
+                    <p class="eyebrow">Een leuk weetje</p>
+                    <h2>Wist je dat?</h2>
+                    <p id="fun-fact" class="card-description" aria-live="polite" aria-atomic="true">Sil <span>Verschrikkelijke Ikke</span> al ongeveer tien keer heeft gezien, vooral omdat de Minions erin spelen.</p>
+                    <button class="text-button" id="next-fact" type="button">Nog een weetje</button>
+                </article>
+                <article class="extra-card quiz-card" id="quiz">
+                    <p class="eyebrow">Hoe goed ken je mij?</p>
+                    <h2>Quiz over Sil</h2>
+                    <p class="quiz-progress" id="quiz-progress">Vraag 1 van 5</p>
+                    <h3 class="quiz-question" id="quiz-question" tabindex="-1"></h3>
+                    <div class="quiz-answers" id="quiz-answers" role="group" aria-labelledby="quiz-question"></div>
+                    <p class="game-status" id="quiz-status" role="status" aria-live="polite"></p>
+                    <button class="button quiz-next" id="quiz-next" type="button" hidden>Volgende vraag</button>
                 </article>
             </section>
         </main>

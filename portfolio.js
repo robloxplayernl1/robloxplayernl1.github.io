@@ -28,6 +28,18 @@ const projects = [
 ];
 
 const updates = [
+    {
+        version: "1.4.0",
+        date: "2026-10-26",
+        title: "Nieuwe pagina's: Hobby's en Favorieten",
+        description: "Er zijn twee nieuwe pagina's toegevoegd aan de website: Hobby's, met informatie over wat Sil graag doet, en Favorieten, met zijn favoriete films, series, muziek, games, plekken, seizoen, dier en kleur."
+    },
+    {
+        version: "1.3.0",
+        date: "2026-10-26",
+        title: "Nieuwe onderdelen op de homepage",
+        description: "Op de homepage staat nu een quiz over Sil met vijf vragen, een Wist je dat?-blok met wisselende weetjes en een stukje over waar Sil op dit moment aan werkt: de Blokcraft Minecraft-server."
+    },
      {
         version: "1.2.0",
         date: "2026-10-25",

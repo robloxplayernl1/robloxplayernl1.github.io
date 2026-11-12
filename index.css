@@ -199,6 +199,14 @@ input:focus-visible {
     gap: 18px;
 }
 
+.home-extras {
+    margin-top: 24px;
+}
+
+.current-project-card {
+    grid-column: 1 / -1;
+}
+
 .extra-card {
     padding: clamp(22px, 4vw, 32px);
     border: 1px solid var(--accent-border);
@@ -207,9 +215,73 @@ input:focus-visible {
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
 }
 
+.extra-card .card-description {
+    margin: 0;
+}
+
 .extra-card h2 {
     margin: 10px 0 16px;
     font-size: clamp(1.35rem, 3vw, 1.8rem);
+}
+
+.quiz-progress {
+    margin: 0 0 10px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.quiz-question {
+    min-height: 3em;
+    margin: 0 0 16px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.quiz-answers {
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-answer {
+    padding: 11px 14px;
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    background: var(--page-background);
+    color: var(--text-color);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.quiz-answer:not(:disabled):hover {
+    border-color: var(--accent-color);
+}
+
+.quiz-answer:disabled {
+    cursor: default;
+}
+
+.quiz-answer.is-correct {
+    border-color: #55b981;
+    background: rgba(85, 185, 129, 0.14);
+}
+
+.quiz-answer.is-incorrect {
+    border-color: #dc7373;
+    background: rgba(220, 115, 115, 0.14);
+}
+
+.quiz-next[hidden] {
+    display: none;
+}
+
+.quiz-card .game-status {
+    margin: 14px 0 0;
+}
+
+.quiz-next:not([hidden]) {
+    margin-top: 14px;
 }
 
 .card-description {
